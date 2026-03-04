@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Khitanan Azmi ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A0E1A;
+            --navy2: #0F1628;
+            --navy3: #151D35;
+            --indigo: #1E2A4A;
+            --blue: #243160;
+            --gold: #D4A843;
+            --gold2: #F0C96A;
+            --gold3: #FDE8A0;
+            --silver: #B8C8E8;
+            --silver2: #D8E8FF;
+            --white: #FFFFFF;
+            --cream: #FFF8E8;
+            --moon: #FDE8A0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: var(--navy);
+            color: var(--silver2);
+            overflow-x: hidden;
+        }
+
+        body.locked { overflow: hidden; }
+
+        /* ===== STARS CANVAS ===== */
+        #stars-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== COVER ===== */
+        #cover {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem;
+            background: radial-gradient(ellipse at 50% 0%, #1E2A5A 0%, #0A0E1A 70%);
+            transition: opacity 1.2s ease, visibility 1.2s ease;
+            overflow: hidden;
+        }
+
+        #cover.hide { opacity: 0; visibility: hidden; }
+
+        /* Cover stars */
+        .cover-star {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            animation: twinkle var(--dur, 3s) ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%,100% { opacity: var(--min, 0.2); transform: scale(1); }
+            50% { opacity: var(--max, 1); transform: scale(1.3); }
+        }
+
+        /* Big moon on cover */
+        .cover-moon {
+            position: absolute;
+            top: -60px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #FDE8A0, #D4A843 60%, #A07820);
+            box-shadow: 0 0 60px rgba(212,168,67,0.4), 0 0 120px rgba(212,168,67,0.2);
+            opacity: 0.85;
+        }
+
+        .cover-moon::before {
+            content: '';
+            position: absolute;
+            top: 20px; left: 40px;
+            width: 130px; height: 130px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 40%, #1E2A5A, #0A0E1A);
+        }
+
+        .cover-card {
+            background: rgba(15, 22, 40, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212,168,67,0.4);
+            border-radius: 4px;
+            padding: 3rem 2.5rem;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 0 80px rgba(212,168,67,0.15), inset 0 0 40px rgba(212,168,67,0.03);
+        }
+
+        /* Corner ornaments */
+        .cover-card::before {
+            content: '☽ ✦ ☾';
+            position: absolute;
+            top: -14px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--navy2);
+            padding: 0 1rem;
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+        }
+
+        .cover-card::after {
+            content: '✦ ✦ ✦';
+            position: absolute;
+            bottom: -10px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--navy2);
+            padding: 0 1rem;
+            color: var(--gold);
+            font-size: 0.6rem;
+            letter-spacing: 6px;
+        }
+
+        .cover-bismillah {
+            font-family: 'Scheherazade New', serif;
+            font-size: 1.9rem;
+            color: var(--gold2);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(212,168,67,0.5);
+        }
+
+        .cover-tag {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .cover-moon-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.8rem;
+            filter: drop-shadow(0 0 12px rgba(212,168,67,0.8));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .cover-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 0 30px rgba(212,168,67,0.3);
+        }
+
+        .cover-parents {
+            font-size: 0.78rem;
+            color: var(--silver);
+            margin-bottom: 1.8rem;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .cover-divider {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: 0 auto 1.8rem;
+            max-width: 250px;
+        }
+
+        .cover-divider::before, .cover-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212,168,67,0.5));
+        }
+
+        .cover-divider::after {
+            background: linear-gradient(to left, transparent, rgba(212,168,67,0.5));
+        }
+
+        .cover-divider span { color: var(--gold); font-size: 0.7rem; }
+
+        .open-btn {
+            padding: 0.9rem 2.5rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 50%, var(--gold) 100%);
+            color: var(--navy);
+            border: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 25px rgba(212,168,67,0.5);
+        }
+
+        .open-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(212,168,67,0.7);
+        }
+
+        .cover-to {
+            margin-top: 1.5rem;
+            font-size: 0.65rem;
+            color: rgba(184,200,232,0.5);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .cover-guest {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--gold3);
+            margin-top: 0.3rem;
+        }
+
+        /* ===== MUSIC BTN ===== */
+        #music-btn {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: var(--indigo);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 20px rgba(212,168,67,0.2);
+            transition: all 0.3s;
+        }
+
+        #music-btn.playing { animation: spin-slow 5s linear infinite; }
+        @keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+        #music-btn:hover { background: var(--gold); color: var(--navy); }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(180deg, #0A0E1A 0%, #0F1628 100%);
+            padding: 4rem 1.5rem 5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Big decorative moon */
+        .deco-moon {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, rgba(253,232,160,0.15), rgba(212,168,67,0.05) 60%, transparent);
+            border: 1px solid rgba(212,168,67,0.15);
+            pointer-events: none;
+        }
+
+        .deco-moon::before {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            border-radius: 50%;
+            border: 1px dashed rgba(212,168,67,0.1);
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0; right: 0;
+            height: 80px;
+            background: var(--navy2);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid rgba(212,168,67,0.3);
+            padding: 0.4rem 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-photo-wrap {
+            position: relative;
+            width: 170px; height: 170px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Rotating star ring */
+        .star-ring {
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            animation: spin-slow 12s linear infinite;
+        }
+
+        .star-ring::before {
+            content: '★ ✦ ★ ✦ ★ ✦ ★ ✦';
+            position: absolute;
+            width: 100%;
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 6px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            opacity: 0.5;
+        }
+
+        .hero-photo-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: conic-gradient(var(--gold), var(--gold2), var(--gold3), var(--gold2), var(--gold));
+            animation: spin-slow 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        .hero-photo-wrap::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            background: var(--navy2);
+        }
+
+        .hero-photo {
+            width: 170px; height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+            border: 3px solid var(--navy2);
+        }
+
+        .hero-crescent {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            filter: drop-shadow(0 0 10px rgba(212,168,67,0.8));
+        }
+
+        .hero-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-shadow: 0 0 30px rgba(212,168,67,0.3);
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+        }
+
+        .hero-parents-text {
+            font-size: 0.82rem;
+            color: var(--silver);
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .hero-parents-text strong { color: var(--gold3); font-weight: 600; }
+
+        /* ===== DIVIDER ===== */
+        .ornament-divider {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 10px;
+            opacity: 0.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== QUOTE SECTION ===== */
+        .quote-section {
+            position: relative;
+            z-index: 1;
+            background: var(--navy2);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(212,168,67,0.1);
+            border-bottom: 1px solid rgba(212,168,67,0.1);
+        }
+
+        .quote-moon-deco {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 15px rgba(212,168,67,0.7));
+        }
+
+        .quote-arabic {
+            font-family: 'Scheherazade New', serif;
+            font-size: 1.7rem;
+            color: var(--gold2);
+            line-height: 2.2;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 20px rgba(212,168,67,0.3);
+        }
+
+        .quote-trans {
+            font-size: 0.82rem;
+            color: var(--silver);
+            font-style: italic;
+            line-height: 1.8;
+            max-width: 300px;
+            margin: 0 auto 0.5rem;
+            font-weight: 300;
+        }
+
+        .quote-ref {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 3rem 1.5rem;
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title .tag {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.7rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .moon-line {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 0.8rem;
+            color: var(--gold);
+            font-size: 0.7rem;
+        }
+
+        .moon-line::before, .moon-line::after {
+            content: '';
+            width: 40px; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold));
+        }
+
+        .moon-line::after {
+            background: linear-gradient(to left, transparent, var(--gold));
+        }
+
+        /* ===== EVENT CARD ===== */
+        .event-card {
+            background: var(--navy3);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(212,168,67,0.25);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,67,0.05);
+        }
+
+        .event-card-header {
+            background: linear-gradient(135deg, var(--indigo), var(--blue));
+            padding: 1.2rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(212,168,67,0.2);
+        }
+
+        .event-card-header span {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .event-card-body { padding: 1.5rem 2rem; }
+
+        .event-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212,168,67,0.08);
+        }
+
+        .event-item:last-child { border-bottom: none; }
+
+        .event-icon {
+            width: 42px; height: 42px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--indigo), var(--blue));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(212,168,67,0.2);
+        }
+
+        .event-info label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .event-info p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.4;
+        }
+
+        .event-info small {
+            font-size: 0.75rem;
+            color: var(--silver);
+            font-weight: 300;
+        }
+
+        /* ===== COUNTDOWN ===== */
+        .countdown-wrap {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.7rem;
+            margin-top: 1.5rem;
+        }
+
+        .countdown-box {
+            background: var(--navy3);
+            border-radius: 4px;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            border: 1px solid rgba(212,168,67,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3), inset 0 0 20px rgba(212,168,67,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .countdown-num {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold2);
+            line-height: 1;
+            text-shadow: 0 0 15px rgba(212,168,67,0.5);
+        }
+
+        .countdown-label {
+            font-size: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--silver);
+            margin-top: 0.4rem;
+            font-weight: 300;
+        }
+
+        /* ===== MAPS BTN ===== */
+        .maps-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            border: 1px solid var(--gold);
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .maps-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 0 30px rgba(212,168,67,0.4);
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(212,168,67,0.2);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:first-child {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(212,168,67,0.3);
+            transform: scale(0.99);
+        }
+
+        .gallery-item img { width:100%;height:100%;object-fit:cover;transition:transform 0.4s; }
+        .gallery-item:hover img { transform: scale(1.05); }
+
+        /* ===== MODAL ===== */
+        #modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        #modal.open { display: flex; }
+
+        #modal img {
+            max-width: 100%; max-height: 90vh;
+            border-radius: 4px;
+            border: 1px solid var(--gold);
+        }
+
+        #modal-close {
+            position: absolute; top: 1rem; right: 1rem;
+            background: var(--navy3); border: 1px solid var(--gold);
+            color: var(--gold); width: 36px; height: 36px;
+            border-radius: 50%; font-size: 1rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        /* ===== GIFT/QRIS ===== */
+        .gift-card {
+            background: var(--navy3);
+            border-radius: 4px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(212,168,67,0.25);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .gift-card > p {
+            font-size: 0.82rem;
+            color: var(--silver);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .qris-frame {
+            display: inline-block;
+            padding: 0.8rem;
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            margin: 1.5rem auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(212,168,67,0.2);
+        }
+
+        .qris-frame img {
+            width: 190px; height: 190px;
+            object-fit: contain;
+            display: block;
+            border-radius: 2px;
+        }
+
+        .bank-box {
+            margin-top: 1rem;
+            padding: 1rem 1.2rem;
+            background: var(--indigo);
+            border-radius: 4px;
+            text-align: left;
+            border: 1px solid rgba(212,168,67,0.15);
+        }
+
+        .bank-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(212,168,67,0.08);
+        }
+
+        .bank-row:last-child { border-bottom: none; }
+
+        .bank-row .bank-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .bank-row .bank-val {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* ===== RSVP ===== */
+        .rsvp-card {
+            background: var(--navy3);
+            border-radius: 4px;
+            padding: 2rem;
+            border: 1px solid rgba(212,168,67,0.25);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .rsvp-intro {
+            font-size: 0.82rem;
+            color: var(--silver);
+            line-height: 1.8;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group { margin-bottom: 1.2rem; }
+
+        .form-group label {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: var(--indigo);
+            border: 1px solid rgba(212,168,67,0.25);
+            border-radius: 3px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--white);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(184,200,232,0.4);
+            font-weight: 300;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(212,168,67,0.15);
+            background: var(--blue);
+        }
+
+        .form-group select option { background: var(--navy3); color: var(--white); }
+        .form-group textarea { resize: none; min-height: 85px; }
+
+        /* Attend options */
+        .attend-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.7rem;
+        }
+
+        .attend-opt input[type="radio"] { display: none; }
+
+        .attend-opt label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1rem;
+            background: var(--indigo);
+            border: 1px solid rgba(212,168,67,0.25);
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--silver);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .attend-opt input[type="radio"]:checked + label {
+            border-color: var(--gold);
+            background: rgba(212,168,67,0.1);
+            color: var(--gold2);
+            box-shadow: 0 0 15px rgba(212,168,67,0.15);
+        }
+
+        .attend-opt.tidak input[type="radio"]:checked + label {
+            border-color: rgba(184,200,232,0.5);
+            background: rgba(184,200,232,0.05);
+            color: var(--silver);
+        }
+
+        /* Submit btn */
+        .wa-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 6px 25px rgba(37,211,102,0.35);
+            transition: all 0.3s;
+        }
+
+        .wa-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 35px rgba(37,211,102,0.5);
+        }
+
+        /* ===== DOA ===== */
+        .doa-section {
+            position: relative;
+            z-index: 1;
+            background: var(--navy2);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(212,168,67,0.1);
+        }
+
+        .doa-section::before {
+            content: '☽';
+            position: absolute;
+            font-size: 8rem;
+            color: rgba(212,168,67,0.04);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .doa-arabic {
+            font-family: 'Scheherazade New', serif;
+            font-size: 1.9rem;
+            color: var(--gold2);
+            line-height: 2;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 0 20px rgba(212,168,67,0.3);
+        }
+
+        .doa-text {
+            font-size: 0.85rem;
+            color: var(--silver);
+            line-height: 2;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            position: relative;
+            z-index: 1;
+            background: var(--navy);
+            border-top: 1px solid rgba(212,168,67,0.1);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-star { font-size: 1.5rem; display: block; margin-bottom: 0.8rem; }
+
+        .footer-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gold2);
+            text-shadow: 0 0 20px rgba(212,168,67,0.3);
+            margin-bottom: 0.3rem;
+            letter-spacing: 2px;
+        }
+
+        footer p {
+            font-size: 0.7rem;
+            color: rgba(184,200,232,0.3);
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* ===== FADE UP ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* Section bg alternating */
+        .section-dark {
+            background: var(--navy2);
+        }
+    </style>
+</head>
+<body class="locked">
+
+<!-- Stars canvas -->
+<canvas id="stars-canvas"></canvas>
+
+<!-- ===== COVER ===== -->
+<div id="cover">
+    <div class="cover-moon"></div>
+
+    <!-- Cover stars (JS generated) -->
+
+    <div class="cover-card">
+        <div class="cover-bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم</div>
+        <div class="cover-tag">✦ Undangan Khitanan ✦</div>
+        <span class="cover-moon-icon">🌙</span>
+        <div class="cover-name" id="cover-child-name">Azmi</div>
+        <div class="cover-parents" id="cover-parents-sub">Putra dari Mardi Uhuy & Desi Purnamasari</div>
+        <div class="cover-divider"><span>✦</span></div>
+        <button class="open-btn" onclick="openInvitation()">☽ Buka Undangan ☾</button>
+        <div class="cover-to">Kepada Yth.</div>
+        <div class="cover-guest">Bapak / Ibu / Saudara/i</div>
+    </div>
+</div>
+
+<!-- MUSIC -->
+<button id="music-btn" onclick="toggleMusic()" title="Musik">♪</button>
+<audio id="bg-music" loop></audio>
+
+<!-- ===== HERO ===== -->
+<div class="hero-section">
+    <div class="deco-moon"></div>
+
+    <div class="hero-badge">✦ Dengan Rahmat & Karunia Allah SWT ✦</div>
+
+    <div style="position:relative;display:inline-block;margin-bottom:2rem">
+        <span class="hero-crescent">🌙</span>
+        <div class="hero-photo-wrap">
+            <img class="hero-photo" id="hero-photo" src="" alt="Foto Anak"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgdmlld0JveD0iMCAwIDE3MCAxNzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iODUiIGN5PSI4NSIgcj0iODUiIGZpbGw9IiMxNTFEMzUiLz48dGV4dCB4PSI4NSIgeT0iMTA1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjcwIj7wn5mIPC90ZXh0Pjwvc3ZnPg=='">
+        </div>
+    </div>
+
+    <div class="hero-badge" style="margin-bottom:1rem">Turut Mengundang Kehadiran Anda</div>
+    <div class="hero-name" id="hero-child-name">Azmi</div>
+    <div class="hero-parents-text" style="margin-top:0.8rem">
+        Putra dari<br>
+        <strong id="hero-father">Mardi Uhuy</strong> &amp; <strong id="hero-mother">Desi Purnamasari</strong>
+    </div>
+</div>
+
+<!-- ===== QUOTE ===== -->
+<div class="quote-section fade-up">
+    <div class="ornament-divider">☽ ✦ ☾</div>
+    <span class="quote-moon-deco">🌟</span>
+    <div class="quote-arabic">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم</div>
+    <div class="quote-trans">"Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang"</div>
+    <div class="ornament-divider" style="opacity:0.3">✦ ✦ ✦</div>
+    <div class="quote-arabic" style="font-size:1.2rem">السُّنَّةُ الخِتَانُ لِلرِّجَالِ</div>
+    <div class="quote-trans">"Khitan adalah fitrah bagi laki-laki"</div>
+    <div class="quote-ref">HR. Ahmad</div>
+    <div class="ornament-divider">☽ ✦ ☾</div>
+</div>
+
+<!-- ===== DETAIL ACARA ===== -->
+<section class="section fade-up">
+    <div class="section-title">
+        <span class="tag">☽ Pelaksanaan ☾</span>
+        <h2>Detail Acara</h2>
+        <div class="moon-line">✦</div>
+    </div>
+
+    <div class="event-card">
+        <div class="event-card-header">
+            <span>✦ Insya Allah Akan Dilaksanakan ✦</span>
+        </div>
+        <div class="event-card-body">
+            <div class="event-item">
+                <div class="event-icon">📅</div>
+                <div class="event-info">
+                    <label>Hari & Tanggal</label>
+                    <p id="event-day-date">Sabtu, 4 April 2026</p>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-icon">⏰</div>
+                <div class="event-info">
+                    <label>Waktu</label>
+                    <p id="event-time">08.00 WIB - Selesai</p>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-icon">🌙</div>
+                <div class="event-info">
+                    <label>Tempat</label>
+                    <p id="event-venue">Rumah Mardi Uhuy</p>
+                    <small id="event-address">Kp.wangkal RT 003/07 des.kalijaya kec Cikarang Barat kab.bekasi</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="countdown-wrap">
+        <div class="countdown-box"><div class="countdown-num" id="cd-days">00</div><div class="countdown-label">Hari</div></div>
+        <div class="countdown-box"><div class="countdown-num" id="cd-hours">00</div><div class="countdown-label">Jam</div></div>
+        <div class="countdown-box"><div class="countdown-num" id="cd-mins">00</div><div class="countdown-label">Menit</div></div>
+        <div class="countdown-box"><div class="countdown-num" id="cd-secs">00</div><div class="countdown-label">Detik</div></div>
+    </div>
+
+    <a id="maps-link" href="#" target="_blank" class="maps-btn">
+        ✦ Petunjuk Lokasi ✦
+    </a>
+</section>
+
+<!-- ===== GALERI ===== -->
+<div class="section-dark">
+    <section class="section fade-up">
+        <div class="section-title">
+            <span class="tag">☽ Kenangan ☾</span>
+            <h2>Galeri Foto</h2>
+            <div class="moon-line">✦</div>
+        </div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+    </section>
+</div>
+
+<div id="modal">
+    <button id="modal-close" onclick="closeModal()">✕</button>
+    <img id="modal-img" src="" alt="">
+</div>
+
+<!-- ===== QRIS ===== -->
+<section class="section fade-up">
+    <div class="section-title">
+        <span class="tag">☽ Hadiah ☾</span>
+        <h2>Hadiah Digital</h2>
+        <div class="moon-line">✦</div>
+    </div>
+
+    <div class="gift-card">
+        <p>Kehadiran dan doa restu Bapak/Ibu sudah menjadi kebahagian terbesar kami. Namun jika berkenan memberikan hadiah, silahkan melalui QRIS berikut.</p>
+
+        <div class="qris-frame">
+            <img id="qris-img" src="" alt="QRIS">
+        </div>
+
+        <div id="bank-info"></div>
+
+        <p style="margin-top:1rem;font-size:0.75rem">Scan menggunakan m-Banking, GoPay, OVO, DANA, dll.</p>
+    </div>
+</section>
+
+<!-- ===== RSVP ===== -->
+<div class="section-dark">
+    <section class="section fade-up">
+        <div class="section-title">
+            <span class="tag">☽ Konfirmasi ☾</span>
+            <h2>Konfirmasi Kehadiran</h2>
+            <div class="moon-line">✦</div>
+        </div>
+
+        <div class="rsvp-card">
+            <p class="rsvp-intro">
+                🌙 Mohon konfirmasi kehadiran Bapak/Ibu agar kami dapat mempersiapkan acara dengan sebaik-baiknya. Jazakumullahu Khairan 🙏
+            </p>
+
+            <div class="form-group">
+                <label>✦ Nama Lengkap</label>
+                <input type="text" id="rsvp-name" placeholder="Masukkan nama Anda...">
+            </div>
+
+            <div class="form-group">
+                <label>✦ Jumlah Tamu</label>
+                <select id="rsvp-count">
+                    <option value="1 orang">1 orang</option>
+                    <option value="2 orang">2 orang</option>
+                    <option value="3 orang">3 orang</option>
+                    <option value="4 orang">4 orang</option>
+                    <option value="5 orang atau lebih">5 orang atau lebih</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>✦ Konfirmasi Kehadiran</label>
+                <div class="attend-grid">
+                    <div class="attend-opt">
+                        <input type="radio" name="attend" id="attend-yes" value="Insya Allah Hadir ✅" checked>
+                        <label for="attend-yes">🌙 Insya Allah Hadir</label>
+                    </div>
+                    <div class="attend-opt tidak">
+                        <input type="radio" name="attend" id="attend-no" value="Belum Bisa Hadir 🙏">
+                        <label for="attend-no">🤲 Belum Bisa Hadir</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>✦ Ucapan & Doa (opsional)</label>
+                <textarea id="rsvp-message" placeholder="Tulis ucapan dan doa untuk Azmi..."></textarea>
+            </div>
+
+            <button class="wa-btn" onclick="sendRSVP()">
+                <span style="font-size:1.1rem">📱</span>
+                Kirim via WhatsApp
+            </button>
+        </div>
+    </section>
+</div>
+
+<!-- ===== DOA ===== -->
+<div class="doa-section fade-up">
+    <div class="ornament-divider">☽ ✦ ☾</div>
+    <div class="doa-arabic">اَللّٰهُمَّ بَارِكْ فِيْهِ وَطَهِّرْهُ</div>
+    <div class="doa-text">
+        "Ya Allah, berkahilah dia dan sucikanlah dia."<br><br>
+        Semoga Allah SWT senantiasa memberikan kesehatan,<br>
+        keberkahan, dan keselamatan kepada putra kami.<br><br>
+        <span style="color:var(--gold2);font-style:normal;font-weight:600">Aamiin Yaa Rabbal 'Aalamiin</span>
+    </div>
+    <div class="ornament-divider">☽ ✦ ☾</div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <span class="footer-star">🌙 ✦ ⭐</span>
+    <div class="footer-name" id="footer-family">Keluarga Mardi Uhuy</div>
+    <p style="margin-top:0.5rem">Jazakumullahu Khairan Katsiran</p>
+    <p style="margin-top:0.5rem;font-size:0.55rem;opacity:0.2">Dibuat dengan ❤️ untuk si buah hati</p>
+</footer>
+
+<script>
+/* ================================================================
+   ✏️ KONFIGURASI
+   ================================================================ */
+const CONFIG = {
+    child: { name: "Azmi" },
+    parents: {
+        father: "Mardi Uhuy",
+        mother: "Desi Purnamasari",
+    },
+    event: {
+        date: "2026-04-04",
+        dayDate: "Sabtu, 4 April 2026",
+        time: "08.00 WIB - Selesai",
+        venue: "Rumah Mardi Uhuy",
+        address: "Kp.wangkal RT 003/07 des.kalijaya kec Cikarang Barat kab.bekasi",
+        mapsUrl: "https://maps.app.goo.gl/RZk4Cf3qaXgqTCwMA",
+    },
+    childPhoto: "https://i.ibb.co/YF5xxQqm/IMG-20260304-WA0012.jpg",
+    gallery: [
+        "https://i.ibb.co/gbdVFXWB/IMG-20260304-WA0004.jpg",
+        "https://i.ibb.co/zHQPrhjZ/IMG-20260304-WA0005.jpg",
+        "https://i.ibb.co/MyWzmZXq/IMG-20260304-WA0006.jpg",
+    ],
+    qrisPhoto: "https://i.ibb.co/Wv7d0CvZ/photo-2026-03-04-17-41-43-7613457061241684208.jpg",
+    bank: {
+        name: "DANA",
+        accountNumber: "082298151430",
+        accountName: "Desi Purnama sari",
+    },
+    musicUrl: "https://archive.org/download/sholawat-badar-sabyan-1/SHOLAWAT%20BADAR%20%28%D8%B5%D9%84%D9%88%D8%A7%D8%AA%20%D8%A8%D8%AF%D8%B1%29%20-%20SABYAN%20%281%29.mp3",
+
+    // ✅ No WA penerima konfirmasi (628xxx = 08xxx)
+    waNumber: "6282298151430",
+};
+/* ================================================================ */
+
+
+/* ===== BINTANG ANIMASI ===== */
+function initStars() {
+    const canvas = document.getElementById('stars-canvas');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const stars = [];
+    for (let i = 0; i < 180; i++) {
+        stars.push({
+            x: Math.random(),
+            y: Math.random(),
+            r: Math.random() * 1.5 + 0.3,
+            alpha: Math.random(),
+            speed: Math.random() * 0.02 + 0.005,
+            phase: Math.random() * Math.PI * 2,
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const t = Date.now() / 1000;
+        stars.forEach(s => {
+            const a = 0.2 + 0.8 * Math.abs(Math.sin(t * s.speed + s.phase));
+            ctx.beginPath();
+            ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 245, 200, ${a})`;
+            ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+}
+
+/* ===== SHOOTING STARS ===== */
+function initShootingStars() {
+    const canvas = document.getElementById('stars-canvas');
+    const ctx = canvas.getContext('2d');
+    const shooters = [];
+
+    function spawnShooter() {
+        shooters.push({
+            x: Math.random() * canvas.width * 0.7,
+            y: Math.random() * canvas.height * 0.4,
+            len: 80 + Math.random() * 80,
+            speed: 4 + Math.random() * 4,
+            alpha: 1,
+        });
+    }
+
+    setInterval(spawnShooter, 3000 + Math.random() * 4000);
+
+    // Overlay shooting stars on top of existing draw
+    const origDraw = window._starsDraw;
+    setInterval(() => {
+        for (let i = shooters.length - 1; i >= 0; i--) {
+            const s = shooters[i];
+            ctx.beginPath();
+            const grad = ctx.createLinearGradient(s.x, s.y, s.x + s.len, s.y + s.len * 0.4);
+            grad.addColorStop(0, `rgba(253,232,160,0)`);
+            grad.addColorStop(1, `rgba(253,232,160,${s.alpha})`);
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = 1.5;
+            ctx.moveTo(s.x, s.y);
+            ctx.lineTo(s.x + s.len, s.y + s.len * 0.4);
+            ctx.stroke();
+            s.x += s.speed * 2;
+            s.y += s.speed * 0.8;
+            s.alpha -= 0.03;
+            if (s.alpha <= 0) shooters.splice(i, 1);
+        }
+    }, 30);
+}
+
+/* ===== INIT ===== */
+function init() {
+    // Fill data
+    document.getElementById('cover-child-name').textContent = CONFIG.child.name;
+    document.getElementById('cover-parents-sub').textContent =
+        `Putra dari ${CONFIG.parents.father} & ${CONFIG.parents.mother}`;
+    document.getElementById('hero-child-name').textContent = CONFIG.child.name;
+    document.getElementById('hero-father').textContent = CONFIG.parents.father;
+    document.getElementById('hero-mother').textContent = CONFIG.parents.mother;
+    document.getElementById('footer-family').textContent = `Keluarga ${CONFIG.parents.father}`;
+
+    if (CONFIG.childPhoto) {
+        document.getElementById('hero-photo').src = CONFIG.childPhoto;
+    }
+
+    document.getElementById('event-day-date').textContent = CONFIG.event.dayDate;
+    document.getElementById('event-time').textContent = CONFIG.event.time;
+    document.getElementById('event-venue').textContent = CONFIG.event.venue;
+    document.getElementById('event-address').textContent = CONFIG.event.address;
+    document.getElementById('maps-link').href = CONFIG.event.mapsUrl;
+
+    // Gallery
+    const grid = document.getElementById('gallery-grid');
+    grid.innerHTML = CONFIG.gallery.map((url, i) => `
+        <div class="gallery-item" onclick="openModal('${url}')">
+            <img src="${url}" alt="Foto ${i+1}" loading="lazy" onerror="this.parentElement.style.display='none'">
+        </div>
+    `).join('');
+
+    // QRIS
+    if (CONFIG.qrisPhoto) {
+        const img = document.getElementById('qris-img');
+        img.onerror = function() { this.alt = '❌ Gambar QRIS gagal dimuat'; };
+        img.src = CONFIG.qrisPhoto;
+    }
+
+    // Bank info
+    if (CONFIG.bank?.accountNumber) {
+        document.getElementById('bank-info').innerHTML = `
+            <div class="bank-box">
+                <div class="bank-row">
+                    <span class="bank-label">E-Wallet</span>
+                    <span class="bank-val">${CONFIG.bank.name}</span>
+                </div>
+                <div class="bank-row">
+                    <span class="bank-label">Nomor</span>
+                    <span class="bank-val" onclick="copyText('${CONFIG.bank.accountNumber}', this)">${CONFIG.bank.accountNumber} 📋</span>
+                </div>
+                <div class="bank-row">
+                    <span class="bank-label">Atas Nama</span>
+                    <span class="bank-val">${CONFIG.bank.accountName}</span>
+                </div>
+            </div>`;
+    }
+
+    // Music
+    if (CONFIG.musicUrl) {
+        const audio = document.getElementById('bg-music');
+        audio.src = CONFIG.musicUrl;
+        audio.load();
+    }
+
+    countdown();
+    setInterval(countdown, 1000);
+    observeFadeUp();
+    initStars();
+    initShootingStars();
+}
+
+/* ===== RSVP → WA ===== */
+function sendRSVP() {
+    const name    = document.getElementById('rsvp-name').value.trim();
+    const count   = document.getElementById('rsvp-count').value;
+    const attend  = document.querySelector('input[name="attend"]:checked').value;
+    const message = document.getElementById('rsvp-message').value.trim();
+
+    if (!name) {
+        alert('Mohon isi nama Anda terlebih dahulu 🙏');
+        document.getElementById('rsvp-name').focus();
+        return;
+    }
+
+    const waText =
+`🌙 *KONFIRMASI KEHADIRAN*
+━━━━━━━━━━━━━━━━━
+Khitanan *${CONFIG.child.name}*
+📅 ${CONFIG.event.dayDate}
+━━━━━━━━━━━━━━━━━
+👤 *Nama:* ${name}
+👥 *Jumlah Tamu:* ${count}
+📋 *Kehadiran:* ${attend}
+${message ? `💬 *Ucapan:* ${message}` : ''}
+━━━━━━━━━━━━━━━━━
+_Dikirim dari undangan digital_`;
+
+    window.open(`https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(waText)}`, '_blank');
+}
+
+function copyText(text, el) {
+    navigator.clipboard.writeText(text).then(() => {
+        const o = el.innerHTML;
+        el.innerHTML = text + ' ✅';
+        setTimeout(() => el.innerHTML = o, 2000);
+    }).catch(() => alert('Nomor: ' + text));
+}
+
+function countdown() {
+    const diff = new Date(CONFIG.event.date + 'T08:00:00').getTime() - Date.now();
+    if (diff < 0) {
+        ['days','hours','mins','secs'].forEach(id => document.getElementById('cd-'+id).textContent = '00');
+        return;
+    }
+    document.getElementById('cd-days').textContent  = String(Math.floor(diff/86400000)).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+}
+
+function openInvitation() {
+    document.getElementById('cover').classList.add('hide');
+    document.body.classList.remove('locked');
+    if (CONFIG.musicUrl) {
+        document.getElementById('bg-music').play().then(() => {
+            document.getElementById('music-btn').classList.add('playing');
+            window._playing = true;
+        }).catch(() => {});
+    }
+}
+
+window._playing = false;
+function toggleMusic() {
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
+    if (!CONFIG.musicUrl) return;
+    if (window._playing) {
+        audio.pause(); btn.classList.remove('playing'); btn.textContent = '♪';
+    } else {
+        audio.play(); btn.classList.add('playing'); btn.textContent = '♫';
+    }
+    window._playing = !window._playing;
+}
+
+function openModal(src) {
+    document.getElementById('modal-img').src = src;
+    document.getElementById('modal').classList.add('open');
+}
+
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+
+document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+});
+
+function observeFadeUp() {
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+}
+
+window.addEventListener('load', init);
+</script>
+</body>
+</html>
